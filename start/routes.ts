@@ -26,4 +26,6 @@ Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
 
+
+
 Route.get('/users','UsersController.index').as('users')
