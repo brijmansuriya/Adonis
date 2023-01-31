@@ -14,14 +14,16 @@
 | and then import them inside `start/routes.ts` as follows
 |
 | import './routes/cart'
-| import './routes/customer'
+| import './routes/customer''
 |
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+// import UsersController from 'App/Controllers/Http/UsersController'
 
-// Route.get('/', async () => {
-//   return { hello: 'world' }
-// })
-Route.get('/', 'PostsController.index')
+Route.get('/', async ({ view }) => {
+  // return UsersController
+  return view.render('welcome')
+})
 
+Route.get('/users','UsersController.index').as('users')
